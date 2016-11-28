@@ -23,3 +23,9 @@
 
 const int WIDTH = 650;
 const int HEIGHT = 479;
+
+struct Message {
+    float x;
+    float y;
+    float rot;
+};
