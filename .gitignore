@@ -1,4 +1,5 @@
+# ignore build directory
 build/
-*.o
-client
-serwer
+
+# ignore tags file from ctags
+tags
