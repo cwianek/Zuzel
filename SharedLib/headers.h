@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sstream>
 #include <arpa/inet.h>
 #include <time.h>
 #include <string>
@@ -20,6 +21,7 @@
 #include "sockets.h"
 #include "Player.h"
 #include "Game.h"
+
 
 const int WIDTH = 650;
 const int HEIGHT = 479;

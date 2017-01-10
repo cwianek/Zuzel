@@ -24,7 +24,13 @@ void Player::move(float elapsedTime){
     
     float xoff = cos(angle) * tellMeBitchHowMuchSpeedIs() * elapsedTime;
     float yoff = sin(angle) * tellMeBitchHowMuchSpeedIs() * elapsedTime;
-    body.move(xoff,yoff);
+    if(body.getPosition().x < WIDTH && body.getPosition().x > 0 
+	&& body.getPosition().y < HEIGHT && body.getPosition().y > 0)
+	{
+	    	body.move(xoff,yoff);
+	}else{
+		body.setPosition(sf::Vector2f(300,300));
+	}
 }
 
 void Player::setElapsedTime(float elapsedTime){

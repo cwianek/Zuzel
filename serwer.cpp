@@ -8,8 +8,8 @@ void * receiveMessage(void * socket);
 int main(){
 
     Game game;
-    enemy = new Player(400,300,20,5);
-    Player * player = new Player(300,300,20,5);
+    enemy = new Player(300,350,20,5);
+    Player * player = new Player(300,320,20,5);
 
     game.setEnemy(*enemy);
     game.setPlayer(*player);
@@ -21,7 +21,8 @@ int main(){
 
     game.setSocket(clientSock);
     game.run();
-
+	
+    close(sock);
 
     return 0;
 }
@@ -29,7 +30,6 @@ int main(){
 
 void * receiveMessage(void * socket) {
     int sockfd = (intptr_t) socket;
-    /* char buffer[BUFSIZE]; */  
 
     while(1) {
 
@@ -40,35 +40,6 @@ void * receiveMessage(void * socket) {
         enemy->body.setPosition(message.x, message.y);
         enemy->body.setRotation(message.rot);
 
-        
-        /* int x, y, rotation; */
-
-        /* read(sockfd,buffer,10); */
-        /* if(buffer[9] == 1) */
-        /*     x = atof(buffer); */
-        /* else if(buffer[9] == 2) */
-        /*     y = atof(buffer); */
-        /* else if(buffer[9] == 3) */
-        /*     rotation = atof(buffer); */
-
-        /* read(sockfd,buffer,10); */
-        /* if(buffer[9] == 1) */
-        /*     x = atof(buffer); */
-        /* else if(buffer[9] == 2) */
-        /*     y = atof(buffer); */
-        /* else if(buffer[9] == 3) */
-        /*     rotation = atof(buffer); */
-
-        /* read(sockfd,buffer,10); */
-        /* if(buffer[9] == 1) */
-        /*     x = atof(buffer); */
-        /* else if(buffer[9] == 2) */
-        /*     y = atof(buffer); */
-        /* else if(buffer[9] == 3) */
-        /*     rotation = atof(buffer); */
-
-        /* enemy->body.setPosition(x,y); */
-        /* enemy->body.setRotation(rotation); */
     }
 }
 

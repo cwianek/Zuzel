@@ -11,8 +11,8 @@ void * receiveMessage(void * socket);
 int main(){
 
     Game game;
-    enemy = new Player(300,300,20,5);
-    Player * player = new Player(400,300,20,5);
+    enemy = new Player(300,320,20,5);
+    Player * player = new Player(300,350,20,5);
 
     game.setEnemy(*enemy);
     game.setPlayer(*player);
@@ -21,9 +21,9 @@ int main(){
     connectServer(sock,PORT,SERVER_ADDR);
     createThreadForCommunication(sock,receiveMessage);
     game.setSocket(sock);
-
     game.run();
 
+    close(sock);
     return 0;
 }
 
